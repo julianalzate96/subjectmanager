@@ -1,0 +1,7 @@
+<form #subjectform="ngForm" (ngSubmit)="Addsubject(subjectform)">
+  <input #_id="ngModel" name="_id" type="hidden" [(ngModel)]="subjectService.selectedSubject._id"> 
+  <input #name="ngModel" name="name" type="text" class="form-control" placeholder="Nombre de la Asignatura" [(ngModel)]="subjectService.selectedSubject.name">
+  <input #teacher="ngModel" name="teacher" type="text" class="form-control" placeholder="Nombre del profesor" [(ngModel)]="subjectService.selectedSubject.teacher">
+  <input #credits="ngModel" name="credits" type="text" class="form-control" placeholder="Creditos de la asignatura" [(ngModel)]="subjectService.selectedSubject.credits">
+  <button type="submit" class="btn btn-success">Agregar</button>
+</form>

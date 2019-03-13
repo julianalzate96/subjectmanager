@@ -1,0 +1,41 @@
+<div class="container" *ngIf="subjects">
+  <header>
+    <h2>USER NAME</h2>
+    <h5> EMAIL </h5>
+  </header>
+  <hr>
+  <main>
+
+    <!--ul class="list-group">
+      <li class="list-group-item" *ngFor="let subject of subjectService.subjects">
+        <a class="float-left"> {{ subject.name }}</a>
+      </li>
+      <li class="list-group-item">
+        <a  [routerLink]="['/Adminsubject']">agregar materia</a>
+      </li>
+    </ul-->
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Asignaruta</th>
+          <th>Promedio</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of subjectService.subjects">
+          <td>{{ subject.name }}</td>
+          <td> {{ subject.prom }} </td>
+          <td><a (click)="deleteSubject(subject)">Eliminar</a></td>
+          <td><a [routerLink]="['/subject', subject._id]">Info</a></td>
+        </tr>
+        <tr>
+          <td><a [routerLink]="['/Adminsubject']">agregar materia</a></td>
+          <td> -- </td>
+          <td> -- </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>

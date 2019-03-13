@@ -1,0 +1,6 @@
+<form #formSignin="ngForm" class="form" (ngSubmit)="Signin(formSignin)">
+  <input #username="ngModel" type="text"  name="userName" class="form-control" placeholder="User Name" [(ngModel)]="userService.selectedUser.userName">
+  <input #email="ngModel" type="email"  name="email" class="form-control" placeholder="Email" [(ngModel)]="userService.selectedUser.email">
+  <input #password="ngModel" type="password" name="password" class="form-control" placeholder="password" [(ngModel)]="userService.selectedUser.password">
+  <button type="submit" class="btn btn-success">Sing In</button>
+</form>

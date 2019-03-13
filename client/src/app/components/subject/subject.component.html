@@ -1,0 +1,37 @@
+<div >
+  <header >
+    <h3>{{ subject.name }}</h3>
+    <h4> {{ subject.teacher }}</h4>
+    <h5> {{ subject.credits }}</h5>
+    <h5>{{ subject.prom }}</h5>
+  </header>
+  <main>
+    <form #testform="ngForm" (ngSubmit)="addtest(testform)">
+      <input #_id="ngModel" name="_id" type="hidden" [(ngModel)]="subjectService.selectedTest._id">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th> 
+            <th>%</th>
+            <th>nota</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let test of subjectService.tests">
+            <td> {{ test.name }} </td>
+            <td> {{ test.percent }} </td>
+            <td> {{ test.note }} </td>
+            <td> <a (click)="deleteTest(test)" >Eliminar</a></td>
+          </tr>
+          <tr>
+            <td> <input #name="ngModel" name="name" type="text" class="sinborde" [(ngModel)]="subjectService.selectedTest.name"> </td>
+            <td> <input #percent="ngModel" name="percent" type="number" class="sinborde" [(ngModel)]="subjectService.selectedTest.percent"> </td>
+            <td> <input #note="ngModel" type="number" name="note" class="sinborde" [(ngModel)]="subjectService.selectedTest.note"> </td>
+            <td><button type="submit" class="btn btn-success">Agregar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </main>
+</div>

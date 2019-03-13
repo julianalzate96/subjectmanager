@@ -1,0 +1,7 @@
+<form #loginform="ngForm" (ngSubmit)="Login(loginform)" class="form container">
+  <input #email="ngModel" type="email" name="email" placeholder="Email" [(ngModel)]="userService.selectedUser.email">
+  <input #password="ngModel" type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="userService.selectedUser.password">
+  <button type="submit" class="btn btn-success">Iniciar Sesion</button>
+</form>
+
+<button (click) ="profile()">perfil</button>
